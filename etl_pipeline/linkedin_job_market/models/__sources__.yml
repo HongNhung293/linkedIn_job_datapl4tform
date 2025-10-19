@@ -1,0 +1,51 @@
+version: 2
+
+sources:
+  - name: linkedin_job_market
+    database: postgres
+    schema: warehouse
+    tables:
+      - name: dim_gold_company_industries
+        meta:
+          dagster:
+            key_prefix: ["gold", "linkedin", "gold", "linkedin", 'warehouse']
+
+      - name: dim_gold_company_specialities
+        meta:
+          dagster:
+            asset_key: ["gold", "linkedin", "warehouse", "dim_gold_company_specialities"]
+
+      - name: dim_gold_employee_counts
+        meta:
+          dagster:
+            asset_key: ["gold", "linkedin", "warehouse", "dim_gold_employee_counts"]
+
+      - name: dim_gold_job_benefits
+        meta:
+          dagster:
+            asset_key: ["gold", "linkedin", "warehouse", "dim_gold_job_benefits"]
+
+      - name: dim_gold_job_industries
+        meta:
+          dagster:
+            asset_key: ["gold", "linkedin", 'warehouse', "dim_gold_job_industries"]
+
+      - name: dim_gold_job_salaries
+        meta:
+          dagster:
+            asset_key: ["gold", "linkedin", "warehouse", "dim_gold_job_salaries"]
+
+      - name: dim_gold_job_skills
+        meta:
+          dagster:
+            asset_key: ["gold", "linkedin", "warehouse", "dim_gold_job_skills"]
+
+      - name: fact_gold_companies
+        meta:
+          dagster:
+            asset_key: ["gold", "linkedin", "warehouse", "fact_gold_companies"]
+
+      - name: fact_gold_postings
+        meta:
+          dagster:
+            asset_key: ["gold", "linkedin", "warehouse", "fact_gold_postings"]

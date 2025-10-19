@@ -1,0 +1,9 @@
+data/
+.env
+venv/
+volumes/
+
+*.sock
+*.rar
+**/__pycache__/
+*.py[cod]
